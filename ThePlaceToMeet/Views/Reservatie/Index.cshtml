@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Vergaderruimte>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Reserveer een vergaderruimte</h2>
+<div id="zoek">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <label for="aantalPersonen" class="control-label">Zoek een vergaderruimte voor </label>
+                <input type="number" name="aantalPersonen" id="aantalPersonen" placeholder="aantal" value=@ViewData["aantalPersonen"]  style="border:1px solid #dedede"/> <b>personen</b>&nbsp;&nbsp;
+                <input type="submit" value="zoek" class="btn btn-secondary" />
+            </div>
+        </form>
+        </div>
+    </div>
+

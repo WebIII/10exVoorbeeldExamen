@@ -1,0 +1,56 @@
+﻿@model ThePlaceToMeet.Controllers.ReservatieViewModel
+
+@{
+    ViewData["Title"] = "Reserveer";
+}
+
+<h2>Reserveer @Model.Naam</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dag" class="control-label"></label>
+                <input asp-for="Dag" class="form-control" />
+                <span asp-validation-for="Dag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeginUur" class="control-label"></label>
+                <input asp-for="BeginUur" class="form-control" />
+                <span asp-validation-for="BeginUur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duur" class="control-label"></label>
+                <input asp-for="Duur" class="form-control" />
+                <span asp-validation-for="Duur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AantalPersonen" class="control-label"></label>
+                <input asp-for="AantalPersonen" class="form-control" />
+                <span asp-validation-for="AantalPersonen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="StandaardCatering" />
+                <label asp-for="StandaardCatering" class="control-label"></label>
+                <span asp-validation-for="StandaardCatering" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CateringId" class="control-label"></label>
+                <!-- Implementeer de selectlist-->
+                <span asp-validation-for="CateringId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-secondary">Reserveer</button>
+                <a asp-action="Index">Terug naar overzicht</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
